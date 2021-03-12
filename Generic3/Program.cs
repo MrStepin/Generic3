@@ -11,18 +11,33 @@ namespace Generic3
         static void Main(string[] args)
 
         {
-            LongOperation<string> longOp = new LongOperation<string>();
+            //LongOperation<string> longOp = new LongOperation<string>();
+            string Download()
+            {
+                Thread.Sleep(1);
+                return "content";
+            }
+            int CalcSomeValue()
+            {
+                Thread.Sleep(1);
+                return 108;
+            }
 
             while (true)
             {
                 var input = Console.ReadLine();
-                longOp.Value(input);
                 if (input == "d")
                 {
-                    longOp.RememberedValue(input);
+                    Console.WriteLine(Download());
                 }
+                if (input == "v")
+                {
+                    Console.WriteLine(CalcSomeValue());
+                }
+
                 Console.ReadKey();
             }
+
         }
     }
 }
