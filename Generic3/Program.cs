@@ -2,14 +2,27 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 
 namespace Generic3
 {
     class Program
     {
         static void Main(string[] args)
+
         {
+            LongOperation<string> longOp = new LongOperation<string>();
+
+            while (true)
+            {
+                var input = Console.ReadLine();
+                longOp.Value(input);
+                if (input == "d")
+                {
+                    longOp.RememberedValue(input);
+                }
+                Console.ReadKey();
+            }
         }
     }
 }
