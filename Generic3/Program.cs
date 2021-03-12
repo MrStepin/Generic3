@@ -36,7 +36,7 @@ namespace Generic3
                 }
                 else if (input != "d" && rememberDownload == "d")
                 {
-                    Console.WriteLine(Download());
+                    Console.WriteLine(rememberDownload);
                 }
                 if (input == "v" && rememberCalc != "v")
                 {
@@ -45,7 +45,7 @@ namespace Generic3
                 }
                 else if (input != "v" && rememberCalc == "v")
                 {
-                    Console.WriteLine(CalcSomeValue());
+                    Console.WriteLine(rememberCalc);
                 }
 
             }
