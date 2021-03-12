@@ -23,27 +23,32 @@ namespace Generic3
                 return 108;
             }
 
-            string rememberDownload = "1";
-            string rememberCalc = "1";
+            string rememberInputD = "1";
+            string rememberInputV = "1";
+            string rememberDownload = "null";
+            int rememberCalc = 0;
 
             while (true)
             {
                 var input = Console.ReadLine();
-                if (input == "d" && rememberDownload != "d")
+                if (input == "d" && rememberInputD != "d")
                 {
-                    rememberDownload = "d";
+                    rememberInputD = "d";
+                    rememberDownload = Download();
                     Console.WriteLine(Download());
                 }
-                else if (input != "d" && rememberDownload == "d")
+                else if (input != "d" && rememberInputD == "d")
                 {
                     Console.WriteLine(rememberDownload);
                 }
-                if (input == "v" && rememberCalc != "v")
+
+                if (input == "v" && rememberInputV != "v")
                 {
-                    rememberCalc = "v";
+                    rememberInputV = "v";
+                    rememberCalc = CalcSomeValue();
                     Console.WriteLine(CalcSomeValue());
                 }
-                else if (input != "v" && rememberCalc == "v")
+                else if (input != "v" && rememberInputV == "v")
                 {
                     Console.WriteLine(rememberCalc);
                 }
