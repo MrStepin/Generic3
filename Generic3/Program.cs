@@ -14,28 +14,40 @@ namespace Generic3
             //LongOperation<string> longOp = new LongOperation<string>();
             string Download()
             {
-                Thread.Sleep(1);
+                Console.WriteLine("Download Started");
                 return "content";
             }
             int CalcSomeValue()
             {
-                Thread.Sleep(1);
+                Console.WriteLine("Calc Started");
                 return 108;
             }
+
+            string rememberDownload = "1";
+            string rememberCalc = "1";
 
             while (true)
             {
                 var input = Console.ReadLine();
-                if (input == "d")
+                if (input == "d" && rememberDownload != "d")
+                {
+                    rememberDownload = "d";
+                    Console.WriteLine(Download());
+                }
+                else if (input != "d" && rememberDownload == "d")
                 {
                     Console.WriteLine(Download());
                 }
-                if (input == "v")
+                if (input == "v" && rememberCalc != "v")
+                {
+                    rememberCalc = "v";
+                    Console.WriteLine(CalcSomeValue());
+                }
+                else if (input != "v" && rememberCalc == "v")
                 {
                     Console.WriteLine(CalcSomeValue());
                 }
 
-                Console.ReadKey();
             }
 
         }
