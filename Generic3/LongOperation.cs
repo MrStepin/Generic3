@@ -8,26 +8,25 @@ namespace Generic3
 {
     public class LongOperation<T>
     {
-        private Func<T,T> _input;
+        private T _input;
+        private T _rememberValue;
 
-        public Func<T, T> Value
+        public bool HasValue { get; set; }
+        public T Value
         {
             get
             {
-                return _input;
+                if (!HasValue)
+                {
+                    HasValue = true;
+                    _rememberValue = _input;
+                }
+                return _rememberValue;
             }
             set
             {
                 _input = value;
-            }
-
-        }
-
-        public Func<T, T> RememberedValue
-        {
-            get
-            {
-                return Value;
+                HasValue = true;
             }
         }
     }
