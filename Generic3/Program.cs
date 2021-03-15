@@ -15,18 +15,21 @@ namespace Generic3
 
             string Download()
             {
+                Console.WriteLine("Download");
                 return "content";
             }
-
+            
             while (true)
             {
                 var input = Console.ReadLine();
-                longOp.Value = Download();
                 if (input == "d")
                 {
+                    if (!longOp.HasValue)
+                    {
+                        longOp.Value = Download();
+                    }
                     Console.WriteLine(longOp.Value);
                 }
-
             }
 
             //
