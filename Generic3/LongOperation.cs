@@ -8,7 +8,6 @@ namespace Generic3
 {
     public class LongOperation<T>
     {
-        private T _input;
         private T _rememberValue;
 
         public bool HasValue { get; set; }
@@ -19,13 +18,12 @@ namespace Generic3
                 if (!HasValue)
                 {
                     HasValue = true;
-                    _rememberValue = _input;
                 }
                 return _rememberValue;
             }
             set
             {
-                _input = value;
+                _rememberValue = value;
                 HasValue = true;
             }
         }

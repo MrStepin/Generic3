@@ -21,12 +21,12 @@ namespace Generic3
             while (true)
             {
                 var input = Console.ReadLine();
+                longOp.Value = Download();
                 if (input == "d")
                 {
-                    longOp.Value = Download();
                     Console.WriteLine(longOp.Value);
                 }
-                Console.WriteLine(longOp.Value);
+
             }
 
             //
