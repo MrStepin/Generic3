@@ -11,26 +11,24 @@ namespace Generic3
         static void Main(string[] args)
 
         {
-            LongOperation<string> longOp = new LongOperation<string>();
-
             string Download()
             {
                 Console.WriteLine("Download");
                 return "content";
             }
-            
+
+            LongOperation<string> longOp = new LongOperation<string>(Download());
+
             while (true)
             {
                 var input = Console.ReadLine();
                 if (input == "d")
                 {
-                    if (!longOp.HasValue)
-                    {
-                        longOp.Value = Download();
-                    }
                     Console.WriteLine(longOp.Value);
                 }
             }
+
+
 
             //
             //string rememberDownload = "null";

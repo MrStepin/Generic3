@@ -8,7 +8,13 @@ namespace Generic3
 {
     public class LongOperation<T>
     {
-        private T _rememberValue;
+
+        public T _rememberValue;
+
+        public LongOperation(T download)
+        {
+            Value = download;
+        }
 
         public bool HasValue { get; set; }
         public T Value
